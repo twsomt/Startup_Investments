@@ -6,12 +6,13 @@
 '''
 
 q23 = '''
-WITH y_11 AS (SELECT country_code AS country,
-              AVG(funding_total) AS y_2011
-              FROM company
-              WHERE EXTRACT(YEAR FROM founded_at::DATE) IN(2011, 2012, 2013)
-              GROUP BY country, EXTRACT(YEAR FROM founded_at)
-              HAVING EXTRACT(YEAR FROM founded_at) = '2011'),
+WITH 
+y_11 AS (SELECT country_code AS country,
+         AVG(funding_total) AS y_2011
+         FROM company
+         WHERE EXTRACT(YEAR FROM founded_at::DATE) IN(2011, 2012, 2013)
+         GROUP BY country, EXTRACT(YEAR FROM founded_at)
+         HAVING EXTRACT(YEAR FROM founded_at) = '2011'),
 y_12 AS (SELECT country_code AS country,
          AVG(funding_total) AS y_2012
          FROM company
