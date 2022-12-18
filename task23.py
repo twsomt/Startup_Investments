@@ -25,7 +25,7 @@ y_13 AS (SELECT country_code AS country,
          WHERE EXTRACT(YEAR FROM founded_at::DATE) IN(2011, 2012, 2013)
          GROUP BY country, EXTRACT(YEAR FROM founded_at)
          HAVING EXTRACT(YEAR FROM founded_at) = '2013')
-            SELECT y_11.country, y_2011, y_2012, y_2013
+SELECT y_11.country, y_2011, y_2012, y_2013
 FROM y_11
 JOIN y_12 ON y_11.country = y_12.country
 JOIN y_13 ON y_12.country = y_13.country
